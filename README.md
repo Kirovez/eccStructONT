@@ -10,7 +10,7 @@ The variables requred to be assigned before the analysis are in the section "VAR
 # 2. Script 'eccDNA_struct.py'
 This script is used to get matrix that can be passed to the heatmap visualization by ComplexHeatmap R package. Example code is below:
 
-```
+```python
 from eccDNApac.eccDNA_struct import *
 
 fastq = './merged_rep2_eccDNA_stress_ddm1.fastq' 
@@ -26,7 +26,7 @@ getMatrixAndDrawHist(genome, fastq, TE_coordinate, prefix, output_folder, runTH=
 
 To draw heatmap with eccDNA structures the follwing code example can be used (in R):
 
-```
+```R
 ddm1_evd_dt = fread('./structure_output_files/MATRIX_NC_003076.8:4208082..4213083_WT_HS2_ONSEN3_matrix.tab', header = T)
 
 ddm1_evd_dt = ddm1_evd_dt[apply(ddm1_evd_dt[,-c(1)], 1, max, na.rm=TRUE) > 3]
